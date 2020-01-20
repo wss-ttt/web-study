@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				margin: 100px auto;
+				width: 1000px;
+				height: 325px;
+				background-color: #ccc;
+				background: url(images/sirendingzhi1.jpg) no-repeat;
+				transition: all 0.8s ease 0.2s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var index = 0;
+		$(function(){
+			setInterval(function(){
+				index++;
+				if(index>4) index = 1;
+				$('.box').css({
+					"background": "url(images/sirendingzhi"+index+".jpg) no-repeat",
+					/*"-webkit-transition": "all 0.8s ease 0.2s",
+					"transition": "all 0.8s ease 0.2s"*/
+				});
+			},1000);
+		});
+	</script>
+
+</html>

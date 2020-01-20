@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				border: 10px solid #ccc;
+				position: relative;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+		<button class="top">上</button>
+		<button class="right">右</button>
+		<button class="bottom">下</button>
+		<button class="left">左</button>
+	</body>
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/divhover(my).js"></script>
+	
+	<script type="text/javascript">
+		
+		// 上
+		$('.top').click(function(){
+			var top = `
+				<div style='background:red;position:absolute;top:-10px;left:-10px;width:400px;height:10px' class='divTop'></div>
+			`;
+			console.log(top);
+			$('.box').append(top);
+		});
+		
+		// 右
+		$('.right').click(function(){
+			var right = `
+				<div style='background:red;position:absolute;top:-10px;right:-10px;width:10px;height:400px' class='divTop'></div>
+			`;
+			$('.box').append(right);
+		});
+		
+		// 下
+		$('.bottom').click(function(){
+			var bottom = `
+			<div style='background:red;position:absolute;left:-10px;bottom:-10px;width:400px;height:10px' class='divTop'></div>
+			`;
+			$('.box').append(bottom);
+		});
+		
+		// 左
+		$('.left').click(function(){
+			var left = `
+			<div style='background:red;position:absolute;left:-10px;top:-10px;width:10px;height:400px' class='divTop'></div>
+			`;
+			$('.box').append(left);
+		});
+	</script>
+</html>

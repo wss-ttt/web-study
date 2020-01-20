@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				margin: 100px auto;
+				width: 1000px;
+				height: 325px;
+				background-color: #ccc;
+				background: url(images/sirendingzhi1.jpg) no-repeat;
+				transition: all 0.8s ease 0.2s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+			<button>4</button>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button').click(function() {
+			var index = $(this).index() + 1;
+			$(this).parent().css({
+				"background": "url(images/sirendingzhi"+index+".jpg) no-repeat",
+			});
+		});
+	</script>
+
+</html>

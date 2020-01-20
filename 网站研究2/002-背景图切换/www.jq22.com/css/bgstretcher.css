@@ -1,0 +1,33 @@
+﻿html {
+	_background: url(../images/trans.gif) no-repeat fixed
+}
+
+.bgstretcher-area {
+	text-align: left
+}
+
+.bgstretcher,
+.bgstretcher ul,
+.bgstretcher ul li {
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.bgstretcher ul,
+.bgstretcher ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+.bgstretcher {
+	background: #000;
+	overflow: hidden;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	_position: absolute;
+	top: 0;
+	left: 0
+}

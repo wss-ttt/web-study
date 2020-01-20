@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body{
+				background-color: #ccc;
+			}
+			.box {
+				width: 400px;
+				height: 400px;
+				border: 10px solid #fff;
+				position: relative;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+
+		</div>
+	</body>
+	<script src="js/jquery-1.10.2.js"></script>
+
+	<script type="text/javascript">
+		var topStr = `
+				<div class = "topBox" 
+				style='background:red;
+				position:absolute;
+				top:-10px;
+				left:-10px;
+				width:0;
+				height:10px'></div>
+			`;
+		var rightStr = `
+				<div class = "rightBox"  
+				style='background:red;
+				position:absolute;
+				top:-10px;
+				right:-10px;
+				width:10px;
+				height:0' ></div>
+			`;
+		var bottomStr = `
+			<div class = "bottomBox" 
+			style='background:red;
+			position:absolute;
+			right:-10px;
+			bottom:-10px;
+			width:0;
+			height:10px' ></div>
+			`;
+		var leftStr = `
+			<div class = "leftBox" 
+			style='background:red;
+			position:absolute;
+			left:-10px;
+			bottom:-10px;
+			width:10px;
+			height:0' ></div>
+			`;
+		var $top;
+		var $right;
+		var $bottom;
+		var $left;
+		var $all;
+		$('.box').hover(function() {
+			console.log(topStr,rightStr,bottomStr,leftStr);
+			$('.box').append(topStr,rightStr,bottomStr,leftStr);
+			$top = $('.topBox');
+			$right = $('.rightBox');
+			$bottom = $('.bottomBox');
+			$left = $('.leftBox');
+			$all = $('.topBox,.rightBox,.bottomBox,.leftBox');
+			$top.animate({
+				width: '400px'
+			}, 300, function() {
+				$right.animate({
+					height: '400px'
+				}, 300, function() {
+					$bottom.animate({
+						width: '400px'
+					}, 300, function() {
+						$left.animate({
+							height: '400px'
+						}, 300, function() {
+
+						})
+					})
+				})
+			});
+		}, function() {
+			$all.stop();
+			$left.animate({
+				height:0
+			},300,function(){
+				$bottom.animate({
+					width:0
+				},300,function(){
+					$right.animate({
+						height:0
+					},300,function(){
+						$top.animate({
+							width:0
+						},300,function(){
+							// 执行完了 完全进行删除掉
+							$all.remove();
+						})
+					})
+				})
+			})
+		});
+	</script>
+
+</html>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            /*弹性布局*/
+            display: flex;
+            justify-content: space-between;
+            height: 56px;
+            position: fixed;
+            z-index: 3;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 2px 0 rgba(28, 31, 33, .1);
+            background-color: #fff;
+        }
+
+        header .page-tab-wrap {
+            position: absolute;
+            top: 56px;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: #FFF;
+            box-shadow: 0 2px 4px 0 rgba(28, 31, 33, .1), 0 4px 8px 0 rgba(28, 31, 33, .1), 0 8px 16px 0 rgba(28, 31, 33, .1), 0 12px 24px 0 rgba(28, 31, 33, .1), 0 16px 32px 0 rgba(28, 31, 33, .1);
+            display: none;
+        }
+
+        header.pageon .page-tab-wrap {
+            display: block;
+        }
+
+        header .js-more.moreon .more-content {
+            position: absolute;
+            top: 56px;
+            right: 0;
+            display: block;
+            width: 150px;
+            background-color: #fff;
+        }
+
+        header .js-more .more-content {
+            display: none;
+        }
+
+        /*遮罩层的样式*/
+        body .mask-box {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(43, 51, 59, .6);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button class="js-page-name">猿问</button>
+        <div class="js-more">
+            <button>更多</button>
+            <div class="more-content">
+                回到首页
+                <br>
+                个人中心
+            </div>
+        </div>
+        <div class="page-tab-wrap">
+            <button onclick="console.log('aa')">确定</button>
+        </div>
+    </header>
+</body>
+<script src="js/jquery-2.1.0.min_ac9f840.js"></script>
+<script>
+    // 点击猿问
+    $('.js-page-name').on('click', function () {
+        $('header').hasClass('pageon') ? (
+            $('body .mask-box').remove(),
+            $('header').removeClass('pageon')
+        ) : (
+                $('.js-more').hasClass('moreon') ?
+                    $('.js-more').removeClass('moreon')
+                    :
+                    $('body').append('<div class="mask-box"></div>'),
+                $('header').addClass('pageon')
+            )
+    })
+    // 点击更多
+    $('.js-more').on('click', function () {
+        $('.js-more').hasClass('moreon') ? (
+            $('body .mask-box').remove(),
+            $('.js-more').removeClass('moreon')
+        ) : (
+                $('header').hasClass('pageon') ?
+                    $('header').removeClass('pageon') :
+                    $('body').append('<div class="mask-box"></div>'), // 注意这个地方是逗号
+                $(this).addClass('moreon')
+            )
+    })
+    // 点击遮罩层
+    $('body').on('click', '.mask-box', function () {
+        // 删除pageon类名
+        $('header').removeClass('pageon')
+        // 删除moreon类名
+        $('.js-more').removeClass('moreon')
+        // 删除遮罩层
+        $(this).remove()
+    })
+</script>
+
+</html>

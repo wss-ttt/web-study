@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				width: 400px;
+				height: 400px;
+				border: 1px solid red;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box"></div>
+	</body>
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/jquery.backstretch.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.box').backstretch([
+				"images/1.jpg",
+				"images/2.jpg",
+				"images/3.jpg",
+				"images/4.jpg"
+			], {
+				duration: 3000,
+				fade: 750
+			});
+		});
+	</script>
+</html>

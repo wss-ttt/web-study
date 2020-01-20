@@ -1,0 +1,12 @@
+﻿@font-face {
+  font-family: 'Rufina';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rufina'), local('Rufina-Regular'), url(../fonts/yq6v-lyuryly-akcpb5g.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rufina';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Rufina Bold'), local('Rufina-Bold'), url(../fonts/yq6w-lyuryly-akkhztwu8za.ttf) format('truetype');
+}

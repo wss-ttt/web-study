@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html >
+<html>
+
+	<head>
+		<meta http-equiv="-Type" ="text/html; charset=UTF-8" />
+		<title>Background Stretcher Demo</title>
+		<!--<link rel="stylesheet" type="text/css" href="css/main.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/bgstretcher.css" />
+		<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+		<script type="text/javascript" src="js/bgstretcher.js"></script>
+		<style type="text/css">
+			.demoo{
+				position: absolute;
+				top:0;
+				left: 0;
+				width: 100%;
+				height: 50%;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				//  Initialize Backgound Stretcher	   
+
+				$('.demoo').bgStretcher({
+
+					images: ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg', 'images/5.jpg'],
+
+					imageWidth: 800,
+
+					imageHeight: 400,
+
+					slideDirection: 'N',
+
+					slideShowSpeed: 1000,
+
+					transitionEffect: 'fade',
+
+					sequenceMode: 'normal',
+
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="demoo">
+		</div>
+	</body>
+
+</html>
