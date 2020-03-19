@@ -16,7 +16,7 @@
         }
 
         .progress {
-            margin: 200px auto;
+            margin: 50px auto;
             border-radius: 5px;
             position: relative;
         }
@@ -46,6 +46,11 @@
         <span class="txt"></span>
     </div>
     <div class="progress" id="p2">
+        <div class="progress-bar">
+        </div>
+        <span class="txt"></span>
+    </div>
+    <div class="progress" id="p3">
         <div class="progress-bar">
         </div>
         <span class="txt"></span>
@@ -114,6 +119,12 @@
             ele: '#p2',
             value: 50,
             barBg: '#1acd7e'
+        });
+
+        var t3 = new Test({
+            ele: '#p3',
+            value: 90,
+            barBg: 'yellow'
         });
 
         function extend() {
